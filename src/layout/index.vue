@@ -1,13 +1,13 @@
 <template>
 	<Layout class="layout">
-		<Layout.Sider :trigger="null" collapsible class="layout-sider">
+		<Layout.Sider class="layout-sider">
 			<Logo/>
 			<AsideMenu/>
 		</Layout.Sider>
 		<Layout>
-			<PageHeader/>
+			<!-- <PageHeader/>
 			<Layout.Content class="layout-content"/>
-			<PageFooter />
+			<PageFooter /> -->
 		</Layout>
 	</Layout>
 </template>
@@ -17,8 +17,8 @@
 	import { Layout } from 'ant-design-vue';
 	import Logo from './logo/index.vue';
 	import AsideMenu from './menu/menu.vue';
-	import PageHeader from './header/index.vue';
-	import PageFooter from './footer';
+	// import PageHeader from './header/index.vue';
+	// import PageFooter from './footer';
 
 </script>
 

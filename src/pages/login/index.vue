@@ -69,6 +69,9 @@
 		// 	message.success('登录成功！');
 		// 	setTimeout(() => router.replace((route.query.redirect as string) ?? '/'));
 		// }
+		
+		setTimeout(() => router.replace((route.query.redirect as string) ?? '/dashboard/home'));
+		
 		state.loading = false;
 		message.destroy();
 	};

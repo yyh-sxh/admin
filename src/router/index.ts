@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory,type RouteRecordRaw } from 'vue-router'
 // 导入路由各页面配置
 import routes from './routes'
 // 配置router对象

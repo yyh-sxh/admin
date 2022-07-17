@@ -12,10 +12,7 @@ app.use(router)
 import store from './store'
 app.use(store)
 
-//引入UI
-import Antd from 'ant-design-vue'
+//全量引入antd样式
 import 'ant-design-vue/dist/antd.css'
-app.use(Antd)
-
 
 app.mount('#app')

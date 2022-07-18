@@ -75,6 +75,40 @@ const routes:Array<RouteRecordRaw> = [
 				component: () => import('@/pages/form/form.vue')
 			}
 		]
+	},
+	{
+	    path: '/404',
+	    name: '404',
+		component: () => import('@/pages/result/404.vue'),
+		meta: {
+			 title: '',
+			 hideInMenu: true
+		}
+	},
+	{
+	    path: '/403',
+	    name: '403',
+		component: () => import('@/pages/result/403.vue'),
+		meta: {
+			 title: '',
+			 hideInMenu: true
+		}
+	},
+	{
+	    path: '/500',
+	    name: '500',
+		component: () => import('@/pages/result/500.vue'),
+		meta: {
+			 title: '',
+			 hideInMenu: true
+		}
+	},
+	{
+	    path: '/:catchAll(.*)',
+	    redirect: '/404',
+		meta: {
+			hideInMenu: true
+		}
 	}
 ]
 export default routes

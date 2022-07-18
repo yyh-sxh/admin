@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-	import { ref, computed } from 'vue';
 	import { Layout } from 'ant-design-vue';
 	import Logo from './logo/index.vue';
 	import AsideMenu from './menu/menu.vue';

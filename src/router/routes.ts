@@ -49,11 +49,30 @@ const routes:Array<RouteRecordRaw> = [
 		children: [
 			{
 			    path: 'list',
-			    name: 'list',
+			    name: 'table-list',
 				meta: {
 					 title: '基础表格'
 				},
 				component: () => import('@/pages/table/table.vue')
+			}
+		]
+	},
+	{
+		path: '/form',
+		name: 'form',
+		meta: {
+			title: '表单'
+		},
+		redirect: '/form/list',
+		component: PageView,
+		children: [
+			{
+			    path: 'list',
+			    name: 'form-list',
+				meta: {
+					 title: '基础表单'
+				},
+				component: () => import('@/pages/form/form.vue')
 			}
 		]
 	}

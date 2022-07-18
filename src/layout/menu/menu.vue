@@ -11,7 +11,7 @@
 <script setup lang="ts">
 	import { reactive, computed, watch, type PropType } from 'vue';
 	import { useRoute, useRouter } from 'vue-router';
-	import { Menu, type MenuTheme } from 'ant-design-vue';
+	import { Menu } from 'ant-design-vue';
 	import MenuItem from './menu-item.vue';
 
 	// 当前路由

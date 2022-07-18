@@ -5,9 +5,10 @@
 			<AsideMenu/>
 		</Layout.Sider>
 		<Layout>
-			<!-- <PageHeader/>
-			<Layout.Content class="layout-content"/>
-			<PageFooter /> -->
+			<PageHeader/>
+			<Layout.Content class="layout-content">
+				 <router-view></router-view>
+			</Layout.Content>
 		</Layout>
 	</Layout>
 </template>
@@ -17,8 +18,7 @@
 	import { Layout } from 'ant-design-vue';
 	import Logo from './logo/index.vue';
 	import AsideMenu from './menu/menu.vue';
-	// import PageHeader from './header/index.vue';
-	// import PageFooter from './footer';
+	import PageHeader from './header/index.vue';
 
 </script>
 
@@ -34,6 +34,9 @@
 
 		.layout-content {
 			flex: none;
+			text-align: left;
+			height: calc(100vh - 65px);
+			padding: 15px;
 		}
 	}
 </style>

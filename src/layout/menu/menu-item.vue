@@ -33,7 +33,7 @@
 	});
 	const props = defineProps({
 		menuInfo: {
-			type: Object as PropType < RouteRecordRaw > ,
+			type: Object as PropType < RouteRecordRaw >
 		},
 	});
 	const menuChildren = computed(() => {

@@ -1,7 +1,7 @@
 <template>
 	<div class="logo">
 		<img src="~@/assets/vite.svg" alt="" />
-		<h2 class="title">管理系统</h2>
+		<h2 class="title">Ant Admin</h2>
 	</div>
 </template>
 

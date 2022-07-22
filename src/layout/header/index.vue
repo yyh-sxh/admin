@@ -16,8 +16,8 @@
 		<Space :size="20">
 			<Dropdown placement="bottomRight" :trigger="['click']">
 				<div class="name">
-					<Avatar :src='getImageUrl()' alt="" shape="square">管理员</Avatar>
-					<span>管理员</span>
+					<Avatar :src='getImageUrl()' alt="" shape="square">{{username}}</Avatar>
+					<span>{{username}}</span>
 				</div>
 				<template #overlay>
 					<Menu>
@@ -43,7 +43,13 @@
 	import { useRouter, useRoute, RouteRecordRaw } from 'vue-router';
 	import { Layout,message,Modal,Dropdown,Menu,Space,Breadcrumb,Avatar,type MenuTheme } from 'ant-design-vue';
 	import { FormOutlined,PoweroffOutlined } from '@ant-design/icons-vue';
-
+	import { useStore } from "vuex"
+	const store = useStore()
+	
+	const username = computed(() => {
+		return store.getters.user
+	});
+	
 	const router = useRouter();
 	const route = useRoute();
 	
@@ -65,6 +71,7 @@
 			
 			centered: true,
 			onOk: async () => {
+				await store.dispatch('resetToken')
 				message.success('成功退出登录');
 				await nextTick();
 				router.replace({

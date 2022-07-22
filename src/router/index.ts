@@ -11,6 +11,7 @@ const router = createRouter({
 
 //路由守卫
 router.beforeEach(async (to, from, next) => {
+	
 	NProgress.start();
 	
 	if(to.name == 'login'){
@@ -18,8 +19,17 @@ router.beforeEach(async (to, from, next) => {
 		NProgress.done();
 	}
 	else{
-		next()
-		NProgress.done();
+		
+		const token = sessionStorage.getItem('username')
+		
+		if(token){
+			next()
+			NProgress.done();
+		}
+		else{
+			next({name:'login',replace: true})
+			NProgress.done();
+		}
 	}
 })
 

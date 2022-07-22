@@ -23,12 +23,23 @@
 	});
 	
 	const { routes } = router.options
-
-	const menus = computed(() => {
-		return [...routes].filter((n) => !n.meta?.hideInMenu).sort((a, b) => (a?.meta?.orderNum || 0) - (b?.meta?.orderNum || 0));
-	});
+	
+	//去除root根目录
+	let arr = []
+	routes.map(item=>{
+		if(item.name == 'root'){
+			arr = [...arr,...item.children]
+		}
+		else{
+			arr = [...arr,item]
+		}
+	})
 	
 
+	const menus = computed(() => {
+		return [...arr].filter((n) => !n.meta?.hideInMenu).sort((a, b) => (a?.meta?.orderNum || 0) - (b?.meta?.orderNum || 0));
+	});
+	
 
 	// 获取当前打开的子菜单
 	const getOpenKeys = () => {

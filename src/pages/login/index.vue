@@ -33,6 +33,8 @@
 	import { useRoute, useRouter } from 'vue-router';
 	import { message, Modal,Button,Form,Input } from 'ant-design-vue';
 	import { UserOutlined,LockOutlined } from '@ant-design/icons-vue';
+	import { useStore } from "vuex"
+	const store = useStore()
 	
 	const state = reactive({
 		loading: false,
@@ -54,6 +56,7 @@
 		message.loading('登录中...', 0);
 		state.loading = true;
 		
+		const res =  await store.dispatch('setUser',state.formInline);
 
 		// const [err] = await to(userStore.login(state.formInline));
 		// if (err) {
@@ -63,11 +66,11 @@
 		// 	});
 		// 	setCaptcha();
 		// } else {
-		// 	message.success('登录成功！');
+			message.success('登录成功！');
 		// 	setTimeout(() => router.replace((route.query.redirect as string) ?? '/'));
 		// }
 		
-		setTimeout(() => router.replace((route.query.redirect as string) ?? '/dashboard/home'));
+		setTimeout(() => router.replace((route.query.redirect as string) ?? '/dashboard'));
 		
 		state.loading = false;
 		message.destroy();
